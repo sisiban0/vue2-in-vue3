@@ -14,7 +14,8 @@
     "babel-loader": "8.2.5",
     "element-plus": "^2.2.0",
     "serve": "13.0.2",
-    "vue": "3.2.33"
+    "vue": "3.2.33",
+    "vue-router": "^4.0.15"
   },
   "devDependencies": {
     "@vue/compiler-sfc": "3.2.33",

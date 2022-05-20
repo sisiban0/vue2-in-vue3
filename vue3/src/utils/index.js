@@ -1,15 +1,8 @@
-import Vue2 from 'vue2App/vue2';
-
-import ElementUI from "vue2App/ElementUi";
-
-import Vuex from "vue2App/vuex";
-
-
-import store from "vue2App/store";
+import {Vue as Vue2,ElementUI,Vuex,store} from "vue2App/vue2Main";
 
 Vue2.use(Vuex);
 
-Vue2.use(ElementUI)
+Vue2.use(ElementUI);
 
 function bindSlotContext(target = {}, context) {
   return Object.keys(target).map(key => {
@@ -52,6 +45,7 @@ function Vue2InVue3(WrapperComponent, wrapperId, options = {}) {
       ...options
     });
     vm.$mount(`#${wrapperId}`);
+    console.log(vm.$store)
   }
   return {
     mounted() {
@@ -59,11 +53,6 @@ function Vue2InVue3(WrapperComponent, wrapperId, options = {}) {
         this.update();
       }
       createVue.bind(this)(wrapperId)
-    },
-    data() {
-      return {
-        count: 0
-      }
     },
     props: WrapperComponent.props,
     methods: {

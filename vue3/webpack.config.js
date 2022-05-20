@@ -82,6 +82,7 @@ module.exports = (env = {}) => ({
         target: "https://10.250.143.61",
         secure: false,
       },
-    }
+    },
+    historyApiFallback:true
   },
 });

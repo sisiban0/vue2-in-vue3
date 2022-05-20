@@ -15,14 +15,16 @@ export default new Vuex.Store({
         }
     },
     actions:{
-        changeNameSync(context){
+        changeNameSync(context,payload){
             new Promise((reslove)=>{
                 setTimeout(()=>{
-                    reslove('lowerzZ')
-                },3000)
+                    reslove(payload)
+                },800)
             }).then((res)=>{
                 context.commit("changeName",res)
             })
         }
     }
 })
+
+export {Vuex}

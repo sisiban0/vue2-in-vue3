@@ -2,15 +2,16 @@
     <div>
         {{name}}
         <el-button @click="changeName">改变名称</el-button>
+        <el-button @click="syncChangeName">异步改变名称</el-button>
         <el-input v-model="username"></el-input>
-        <!-- <el-table :data="tableData" style="width: 100%">
+        <el-table :data="tableData" style="width: 100%">
             <el-table-column prop="date" label="日期" width="180">
             </el-table-column>
             <el-table-column prop="name" label="姓名" width="180">
             </el-table-column>
             <el-table-column prop="address" label="地址">
             </el-table-column>
-        </el-table> -->
+        </el-table>
         <el-form ref="form" :model="form" label-width="80px">
             <el-form-item label="活动名称">
                 <el-input v-model="form.name"></el-input>
@@ -56,12 +57,9 @@ const staticData = [{
 }];
 export default {
     computed: {
-        // ...mapState({
-        //     name: state => state.name
-        // })
-        name(){
-            return this.$store.state.name
-        }
+        ...mapState({
+            name: state => state.name
+        })
     },
     data() {
         return {
@@ -84,15 +82,14 @@ export default {
         },
         ajax() {
             axios.get("/api/system/version").then((res) => {
-                console.log(res);
                 this.tableData = staticData;
             })
         },
         changeName(){
-            // console.log(this.$store.commit)
             this.$store.commit("changeName",this.username)
-            // this.username = "haha"
-            // this.$store.state.name = "haha"
+        },
+        syncChangeName(){
+            this.$store.dispatch("changeNameSync",this.username)
         }
     },
 }

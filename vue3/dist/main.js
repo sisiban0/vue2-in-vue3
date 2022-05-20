@@ -184,38 +184,28 @@ module.exports = new Promise((resolve, reject) => {
 /******/ 	/* webpack/runtime/remotes loading */
 /******/ 	(() => {
 /******/ 		var chunkMapping = {
-/******/ 			"59": [
-/******/ 				297,
-/******/ 				632,
-/******/ 				649,
-/******/ 				806,
-/******/ 				914
+/******/ 			"533": [
+/******/ 				632
+/******/ 			],
+/******/ 			"811": [
+/******/ 				725,
+/******/ 				885
 /******/ 			]
 /******/ 		};
 /******/ 		var idToExternalAndNameMapping = {
-/******/ 			"297": [
-/******/ 				"default",
-/******/ 				"./store",
-/******/ 				691
-/******/ 			],
 /******/ 			"632": [
 /******/ 				"default",
 /******/ 				"./Button",
 /******/ 				691
 /******/ 			],
-/******/ 			"649": [
+/******/ 			"725": [
 /******/ 				"default",
-/******/ 				"./vuex",
+/******/ 				"./vue2Main",
 /******/ 				691
 /******/ 			],
-/******/ 			"806": [
+/******/ 			"885": [
 /******/ 				"default",
-/******/ 				"./ElementUi",
-/******/ 				691
-/******/ 			],
-/******/ 			"914": [
-/******/ 				"default",
-/******/ 				"./vue2",
+/******/ 				"./routes",
 /******/ 				691
 /******/ 			]
 /******/ 		};
@@ -389,7 +379,7 @@ module.exports = new Promise((resolve, reject) => {
 /******/ 		};
 /******/ 		
 /******/ 		__webpack_require__.f.miniCss = (chunkId, promises) => {
-/******/ 			var cssChunks = {"59":1};
+/******/ 			var cssChunks = {"533":1};
 /******/ 			if(installedCssChunks[chunkId]) promises.push(installedCssChunks[chunkId]);
 /******/ 			else if(installedCssChunks[chunkId] !== 0 && cssChunks[chunkId]) {
 /******/ 				promises.push(installedCssChunks[chunkId] = loadStylesheet(chunkId).then(() => {
@@ -498,7 +488,7 @@ module.exports = new Promise((resolve, reject) => {
 var __webpack_exports__ = {};
 // This entry need to be wrapped in an IIFE because it need to be isolated against other modules in the chunk.
 (() => {
-Promise.all(/* import() */[__webpack_require__.e(240), __webpack_require__.e(59)]).then(__webpack_require__.bind(__webpack_require__, 59));
+Promise.all(/* import() */[__webpack_require__.e(557), __webpack_require__.e(811)]).then(__webpack_require__.bind(__webpack_require__, 811));
 
 })();
 

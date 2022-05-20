@@ -1,30 +1,31 @@
 <template>
   <div>
     <h3>Vue2 App</h3>
-    <Content :count="count"/>
-    <Button @btnClick="inc"/>
+    <div style="color: red">
+      <div>count: {{ count }}</div>
+    </div>
+    <Button @btnClick="inc" :count="count" />
+    <router-view></router-view>
   </div>
 </template>
 
 <script>
-import Content from "./components/Content";
 import Button from './components/Button';
 
 export default {
   components: {
-    Content,
     Button,
   },
   data() {
     return {
       count: 0,
-    }
+    };
   },
   methods: {
     inc() {
       this.count++;
-    }
-  }
+    },
+  },
 };
 </script>
 

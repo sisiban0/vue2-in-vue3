@@ -48,11 +48,9 @@ module.exports = (env = {}) => ({
       filename: 'remoteEntry.js',
       library: { type: 'var', name: 'vue2App' },
       exposes: {
-        './vue2':'./node_modules/vue/dist/vue',
-        './vuex': './node_modules/vuex/dist/vuex',
-        './ElementUi':'./node_modules/element-ui/lib/index',
-        './store':'./src/store/index',
-        './Button': './src/components/Button',
+        "./vue2Main":"./src/exportMod",
+        "./Button": "./src/components/Button",
+        "./routes":"./src/router"
       }
     }),
     new HtmlWebpackPlugin({
@@ -76,6 +74,7 @@ module.exports = (env = {}) => ({
         target: "https://10.250.143.61",
         secure: false,
       },
-    }
+    },
+    historyApiFallback:true
   },
 });
