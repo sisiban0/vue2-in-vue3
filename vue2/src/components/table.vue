@@ -81,9 +81,10 @@ export default {
                 .catch(_ => { });
         },
         ajax() {
-            axios.get("/api/system/version").then((res) => {
-                this.tableData = staticData;
-            })
+            // axios.get("/api/system/version").then((res) => {
+            //     this.tableData = staticData;
+            // })
+            this.tableData = staticData;
         },
         changeName(){
             this.$store.commit("changeName",this.username)
